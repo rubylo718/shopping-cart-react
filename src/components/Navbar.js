@@ -1,6 +1,8 @@
-import React from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext';
 
 const Navbar = () => {
+	const [state] = useContext(CartContext)
 	return (
 		<nav className="navbar bg-body-tertiary">
 			<div className="container-fluid">
@@ -13,7 +15,7 @@ const Navbar = () => {
 				>
 					購物車
 					<span className="badge rounded-pill text-bg-danger position-absolute top-0 start-100 translate-middle">
-						99
+						{state.cartList.length}
 					</span>
 				</button>
 			</div>

@@ -11,7 +11,20 @@ const Cart = () => {
 						return (
 							<tr key={item.id}>
 								<td>
-									<a href="/">x</a>
+									<button
+										type="button"
+										className="btn btn-sm"
+										onClick={() => {
+											dispatch({
+												type: 'REMOVE_CART_ITEM',
+												payload: {
+													...item,
+												},
+											})
+										}}
+									>
+										x
+									</button>
 								</td>
 								<td>
 									<img className="table-img" src={item.img} alt={item.title} />
@@ -37,7 +50,7 @@ const Cart = () => {
 											})
 										}}
 									>
-										{[...Array(10)].map((_, i) => {
+										{[...Array(20)].map((_, i) => {
 											return (
 												<option value={i + 1} key={i}>
 													{i + 1}
@@ -54,7 +67,7 @@ const Cart = () => {
 				<tfoot>
 					<tr>
 						<td colSpan={5} className="text-end">
-							總金額 NT$ 400
+							總金額 NT$ {state.total || 0}
 						</td>
 					</tr>
 				</tfoot>
