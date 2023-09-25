@@ -8,9 +8,14 @@ import './styles/style.scss'
 function App() {
 	const cartReducer = useReducer((state, action) => {
 		const cartList = [...state.cartList]
+		const index = cartList.findIndex(item => item.id === action.payload.id)
 		switch (action.type) {
 			case 'ADD_TO_CART':
-				cartList.push(action.payload)
+				if (index === -1) {
+					cartList.push(action.payload)
+				} else {
+					cartList[index].quantity++
+				}
 				return {
 					...state,
 					cartList
