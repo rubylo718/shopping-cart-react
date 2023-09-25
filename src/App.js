@@ -32,10 +32,10 @@ function App() {
 										alt="..."
 									/>
 									<div className="card-body">
-										<h5 className="card-title">
+										<h6 className="card-title">
 											草莓鬆餅
 											<span className="float-end">NT$ 200</span>
-										</h5>
+										</h6>
 										<button
 											type="button"
 											className="btn btn-outline-primary w-100"
@@ -53,10 +53,10 @@ function App() {
 										alt="..."
 									/>
 									<div className="card-body">
-										<h5 className="card-title">
+										<h6 className="card-title">
 											草莓鬆餅
 											<span className="float-end">NT$ 200</span>
-										</h5>
+										</h6>
 										<button
 											type="button"
 											className="btn btn-outline-primary w-100"
@@ -74,10 +74,10 @@ function App() {
 										alt="..."
 									/>
 									<div className="card-body">
-										<h5 className="card-title">
+										<h6 className="card-title">
 											草莓鬆餅
 											<span className="float-end">NT$ 200</span>
-										</h5>
+										</h6>
 										<button
 											type="button"
 											className="btn btn-outline-primary w-100"
@@ -95,10 +95,10 @@ function App() {
 										alt="..."
 									/>
 									<div className="card-body">
-										<h5 className="card-title">
+										<h6 className="card-title">
 											草莓鬆餅
 											<span className="float-end">NT$ 200</span>
-										</h5>
+										</h6>
 										<button
 											type="button"
 											className="btn btn-outline-primary w-100"
@@ -119,7 +119,7 @@ function App() {
 											<a href="/">x</a>
 										</td>
 										<td>
-											<img src="" alt="" />
+											<img className='table-img' src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" alt="" />
 										</td>
 										<td>草莓鬆餅
 											<br />
