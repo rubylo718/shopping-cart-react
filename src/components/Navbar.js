@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext';
+import { CartContext } from '../contexts/CartContext'
 
 const Navbar = () => {
-	const [state] = useContext(CartContext)
+	const state = useContext(CartContext)
 	return (
 		<nav className="navbar bg-body-tertiary">
 			<div className="container-fluid">

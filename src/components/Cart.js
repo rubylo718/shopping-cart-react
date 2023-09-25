@@ -1,8 +1,9 @@
 import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext'
+import { CartContext, CartDispatchContext } from '../contexts/CartContext'
 
 const Cart = () => {
-	const [state, dispatch] = useContext(CartContext)
+	const state = useContext(CartContext)
+	const dispatch = useContext(CartDispatchContext)
 	return (
 		<div className="bg-light p-3">
 			<table className="table align-middle">

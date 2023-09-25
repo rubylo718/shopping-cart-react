@@ -1,41 +1,12 @@
-import { useReducer } from 'react'
 import Navbar from './components/Navbar'
 import Products from './components/Products'
 import Cart from './components/Cart'
-import { CartContext } from './contexts/CartContext'
+import { CartProvider } from './contexts/CartContext'
 import './styles/style.scss'
 
 function App() {
-	const cartReducer = useReducer(
-		(state, action) => {
-			const cartList = [...state.cartList]
-			const index = cartList.findIndex((item) => item.id === action.payload.id)
-			switch (action.type) {
-				case 'ADD_TO_CART':
-					if (index === -1) {
-						cartList.push(action.payload)
-					} else {
-						cartList[index].quantity++
-					}
-					return {
-						...state,
-						cartList,
-						total: calTotalPrice(cartList),
-					}
-				case 'CHANGE_CART_QTY':
-					cartList[index].quantity = action.payload.quantity
-					return { ...state, cartList, total: calTotalPrice(cartList) }
-				case 'REMOVE_CART_ITEM':
-					cartList.splice(index, 1)
-					return { ...state, cartList, total: calTotalPrice(cartList) }
-				default:
-					return state
-			}
-		},
-		{ cartList: [] }
-	)
 	return (
-		<CartContext.Provider value={cartReducer}>
+		<CartProvider>
 			<Navbar />
 			<div className="container mt-4">
 				<div className="row">
@@ -47,14 +18,9 @@ function App() {
 					</div>
 				</div>
 			</div>
-		</CartContext.Provider>
+		</CartProvider>
 	)
 }
 
-function calTotalPrice(cartList) {
-	return cartList
-		.map((item) => item.quantity * item.price)
-		.reduce((a, b) => a + b, 0);
-}
 
 export default App
