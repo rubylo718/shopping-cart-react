@@ -1,31 +1,33 @@
-import React from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext'
 
 const Cart = () => {
+	const [state, dispatch] = useContext(CartContext)
 	return (
 		<div className="bg-light p-3">
 			<table className="table align-middle">
 				<tbody>
-					<tr>
-						<td>
-							<a href="/">x</a>
-						</td>
-						<td>
-							<img
-								className="table-img"
-								src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80"
-								alt=""
-							/>
-						</td>
-						<td>
-							草莓鬆餅
-							<br />
-							<small className="text-muted">NT$ 200</small>
-						</td>
-						<td>
-							<select className="form-select"></select>
-						</td>
-						<td className="text-end">NT$ 400</td>
-					</tr>
+					{state.cartList.map((item) => {
+						return (
+							<tr key={item.id}>
+								<td>
+									<a href="/">x</a>
+								</td>
+								<td>
+									<img className="table-img" src={item.img} alt={item.title} />
+								</td>
+								<td>
+									{item.title}
+									<br />
+									<small className="text-muted">NT$ {item.price}</small>
+								</td>
+								<td>
+									<select className="form-select"></select>
+								</td>
+								<td className="text-end">NT$ {item.price * item.quantity}</td>
+							</tr>
+						)
+					})}
 				</tbody>
 				<tfoot>
 					<tr>
