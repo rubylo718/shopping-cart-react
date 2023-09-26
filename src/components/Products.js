@@ -5,7 +5,7 @@ const Products = ({ id, title, imgPath, price }) => {
 	const dispatch = useContext(CartDispatchContext)
 	const [addQty, setAddQty] = useState(1)
 	return (
-		<div className="col" key={id}>
+		<div className="col">
 			<div className="card">
 				<img src={imgPath} className="card-img-top" alt={title} />
 				<div className="card-body">

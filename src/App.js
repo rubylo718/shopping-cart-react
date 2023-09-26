@@ -20,6 +20,7 @@ function App() {
 										title={product.title}
 										imgPath={product.img}
 										price={product.price}
+										key={product.id}
 									/>
 								)
 							})}
