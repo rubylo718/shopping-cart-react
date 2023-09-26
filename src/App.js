@@ -12,7 +12,7 @@ function App() {
 			<div className="container mt-4">
 				<div className="row">
 					<div className="col-md-7">
-						<div className="row row-cols-3 g-3">
+						<div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
 							{productsData.map((product) => {
 								return (
 									<Products

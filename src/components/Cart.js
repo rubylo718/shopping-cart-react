@@ -5,7 +5,7 @@ const Cart = () => {
 	const state = useContext(CartContext)
 	const dispatch = useContext(CartDispatchContext)
 	return (
-		<div className="bg-light p-3">
+		<div className="table-responsive bg-light p-3">
 			<table className="table align-middle">
 				<tbody>
 					{state.cartList.map((item) => {

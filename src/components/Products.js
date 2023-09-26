@@ -9,10 +9,10 @@ const Products = ({ id, title, imgPath, price }) => {
 			<div className="card">
 				<img src={imgPath} className="card-img-top" alt={title} />
 				<div className="card-body">
-					<h6 className="card-title">
-						{title}
+					<div className='d-flex justify-content-between align-items-center flex-column flex-xl-row mb-xl-2'>
+						<h6 className="card-title mb-0">{title}</h6>
 						<span className="float-end">NT$ {price}</span>
-					</h6>
+					</div>
 					<div
 						className="btn-group btn-group-sm d-flex align-items-center mb-2"
 						role="group"
